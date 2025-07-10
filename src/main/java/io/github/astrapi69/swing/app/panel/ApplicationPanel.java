@@ -31,6 +31,7 @@ import javax.swing.JLabel;
 import io.github.astrapi69.model.BaseModel;
 import io.github.astrapi69.model.api.IModel;
 import io.github.astrapi69.swing.app.model.ApplicationModelBean;
+import io.github.astrapi69.swing.app.model.Mp3CoverModelBean;
 import io.github.astrapi69.swing.base.BasePanel;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -38,7 +39,7 @@ import lombok.experimental.FieldDefaults;
 
 /**
  * The class {@code ApplicationPanel} represents a custom panel that extends {@link BasePanel} and
- * is designed to display a label with the title from the {@link ApplicationModelBean}
+ * displays a title label along with a nested {@link Mp3CoverPanel}
  */
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -46,6 +47,9 @@ public class ApplicationPanel extends BasePanel<ApplicationModelBean>
 {
 	/** The label component that displays the title */
 	JLabel lblTemplate;
+
+	/** The panel for editing MP3 tags and cover */
+	Mp3CoverPanel mp3CoverPanel;
 
 	/**
 	 * Constructor with a specified model
@@ -63,7 +67,7 @@ public class ApplicationPanel extends BasePanel<ApplicationModelBean>
 	 */
 	public ApplicationPanel()
 	{
-		this(BaseModel.of(ApplicationModelBean.builder().build()));
+		this(BaseModel.of(ApplicationModelBean.builder().title("MP3 Tag Editor").build()));
 	}
 
 	/**
@@ -74,7 +78,9 @@ public class ApplicationPanel extends BasePanel<ApplicationModelBean>
 	{
 		super.onInitializeComponents();
 		ApplicationModelBean modelObject = getModelObject();
+		modelObject.setMp3CoverModelBean(Mp3CoverModelBean.builder().build());
 		lblTemplate = new JLabel(modelObject.getTitle());
+		mp3CoverPanel = new Mp3CoverPanel(BaseModel.of(modelObject.getMp3CoverModelBean()));
 	}
 
 	/**
@@ -84,8 +90,8 @@ public class ApplicationPanel extends BasePanel<ApplicationModelBean>
 	protected void onInitializeLayout()
 	{
 		super.onInitializeLayout();
-		this.setLayout(new BorderLayout());
-		this.add(lblTemplate, BorderLayout.CENTER);
+		this.setLayout(new BorderLayout(10, 10));
+		this.add(lblTemplate, BorderLayout.NORTH);
+		this.add(mp3CoverPanel, BorderLayout.CENTER);
 	}
-
 }

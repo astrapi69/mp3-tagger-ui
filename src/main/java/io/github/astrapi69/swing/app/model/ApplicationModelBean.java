@@ -52,4 +52,6 @@ public class ApplicationModelBean
 
 	/** The model for the settings */
 	SettingsModelBean settingsModelBean;
+
+	Mp3CoverModelBean mp3CoverModelBean;
 }

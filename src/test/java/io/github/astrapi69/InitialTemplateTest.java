@@ -30,7 +30,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import io.github.astrapi69.collection.array.ArrayExtensions;
@@ -55,13 +54,13 @@ class InitialTemplateTest
 {
 
 	@Test
-	@Disabled
+	// @Disabled
 	public void testRenameToConcreteProject() throws IOException
 	{
 		String projectDescription;
 		// TODO change the following description with your project description
 		// and then remove the annotation Disabled and run this unit test method
-		projectDescription = "!!!Chage this description with your project description!!!";
+		projectDescription = "An UI for jaudiotagger";
 		renameToConcreteProject(projectDescription);
 	}
 

@@ -1,4 +1,5 @@
 [versions]
+jaudiotagger-version = "3.0.1"
 awt-extensions-version = "2.0"
 commons-text-version = "1.13.1"
 easy-logger-version = "1.1"
@@ -30,6 +31,7 @@ swing-base-components-version = "5.1"
 throwable-version = "3"
 
 [libraries]
+jaudiotagger = { module = "net.jthink:jaudiotagger", version.ref = "jaudiotagger-version" }
 awt-extensions = { module = "io.github.astrapi69:awt-extensions", version.ref = "awt-extensions-version" }
 commons-text = { module = "org.apache.commons:commons-text", version.ref = "commons-text-version" }
 easy-logger = { module = "io.github.astrapi69:easy-logger", version.ref = "easy-logger-version" }
@@ -73,6 +75,7 @@ core-dependencies = [
     "pf4j",
     "resourcebundle-core",
     "swing-base-components",
+    "jaudiotagger"
 ]
 # Bundle of the izpack dependencies
 izpack = [

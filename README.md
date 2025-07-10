@@ -1,22 +1,19 @@
-# Overview
 
-<div style="text-align: center">
-
-[![Java CI with Gradle](https://github.com/astrapi69/swing-app-ui-template/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/swing-app-ui-template/actions/workflows/gradle.yml)
-[![Coverage Status](https://codecov.io/gh/astrapi69/swing-app-ui-template/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/swing-app-ui-template)
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/swing-app-ui-template.svg?style=flat)](https://github.com/astrapi69/swing-app-ui-template/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-app-ui-template/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-app-ui-template)
-[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/swing-app-ui-template.svg)](http://www.javadoc.io/doc/io.github.astrapi69/swing-app-ui-template)
+[![Java CI with Gradle](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/actions/workflows/gradle.yml)
+[![Coverage Status](https://codecov.io/gh/astrapi69/astrapi69-mp3-tagger-ui/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/astrapi69-mp3-tagger-ui)
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/astrapi69-mp3-tagger-ui.svg?style=flat)](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/issues)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/astrapi69-mp3-tagger-ui/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/astrapi69-mp3-tagger-ui)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/astrapi69-mp3-tagger-ui.svg)](http://www.javadoc.io/doc/io.github.astrapi69/astrapi69-mp3-tagger-ui)
 [![MIT License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
-[![Hits Of Code](https://hitsofcode.com/github/astrapi69/swing-app-ui-template?branch=develop)](https://hitsofcode.com/github/astrapi69/swing-app-ui-template/view?branch=develop)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/astrapi69-mp3-tagger-ui?branch=develop)](https://hitsofcode.com/github/astrapi69/astrapi69-mp3-tagger-ui/view?branch=develop)
 
 </div>
 
 Template project for create java swing ui projects with izpack installer. A small documentation how to use this
-template project in in the [wiki](https://github.com/astrapi69/swing-app-ui-template/wiki)
+template project in in the [wiki](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/wiki)
 
-> Please support this project by simply putting a Github <a class="github-button" href="https://github.com/astrapi69/swing-app-ui-template" data-icon="octicon-star" aria-label="Star astrapi69/swing-app-ui-template on GitHub">
+> Please support this project by simply putting a Github <a class="github-button" href="https://github.com/astrapi69/astrapi69-mp3-tagger-ui" data-icon="octicon-star" aria-label="Star astrapi69/astrapi69-mp3-tagger-ui on GitHub">
 > Star ⭐</a>
 >
 > Share this library with friends on Twitter and everywhere else you can
@@ -30,7 +27,7 @@ No animals were harmed in the making of this library.
 
 ## License
 
-The source code comes under the liberal MIT License, making swing-app-ui-template great for all types of applications.
+The source code comes under the liberal MIT License, making astrapi69-mp3-tagger-ui great for all types of applications.
 
 ## Import dependencies to your project
 
@@ -39,27 +36,27 @@ The source code comes under the liberal MIT License, making swing-app-ui-templat
 
 ## gradle dependency
 
-Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-app-ui-template/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/swing-app-ui-template)
+Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/astrapi69-mp3-tagger-ui/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/astrapi69-mp3-tagger-ui)
 
 You can first define the version in the ext section and add than the following gradle dependency to
-your project `build.gradle` if you want to import the core functionality of swing-app-ui-template:
+your project `build.gradle` if you want to import the core functionality of astrapi69-mp3-tagger-ui:
 
 define version in file gradle.properties
 
 ```
-swingAppUiTemplateVersion=${latestVersion}
+astrapi69Mp3TaggerUiVersion=${latestVersion}
 ```
 
 or in build.gradle ext area
 
 ```
-    swingAppUiTemplateVersion = "${latestVersion}"
+    astrapi69Mp3TaggerUiVersion = "${latestVersion}"
 ```
 
 then add the dependency to the dependencies area
 
 ```
-    implementation("io.github.astrapi69:swing-app-ui-template:$swingAppUiTemplateVersion")
+    implementation("io.github.astrapi69:astrapi69-mp3-tagger-ui:$astrapi69Mp3TaggerUiVersion")
 ```
 
 # with new libs.versions.toml file
@@ -68,15 +65,15 @@ If you use the new libs.versions.toml file for new automatic catalog versions up
 
 ```
 [versions]
-swing-app-ui-template-version=${latestVersion}
+astrapi69-mp3-tagger-ui-version=${latestVersion}
 
 [libraries]
-swing-app-ui-template = { module = "io.github.astrapi69:swing-app-ui-template", version.ref = "swing-app-ui-template-version" }
+astrapi69-mp3-tagger-ui = { module = "io.github.astrapi69:astrapi69-mp3-tagger-ui", version.ref = "astrapi69-mp3-tagger-ui-version" }
 ```
 then add the dependency to the dependencies area
 
 ```
-    implementation libs.swing.app.ui.template
+    implementation libs.astrapi69.mp3.tagger.ui
 ```
 </details>
 
@@ -86,18 +83,18 @@ then add the dependency to the dependencies area
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~swing-app-ui-template~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~astrapi69-mp3-tagger-ui~~~) for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
-functionality of swing-app-ui-template:
+functionality of astrapi69-mp3-tagger-ui:
 
 Then you can add the dependency to your dependencies:
 
     <properties>
         ...
 ```xml
-        <!-- swing-app-ui-template version -->
-        <swing-app-ui-template.version>${latestVersion}</swing-app-ui-template.version>
+        <!-- astrapi69-mp3-tagger-ui version -->
+        <astrapi69-mp3-tagger-ui.version>${latestVersion}</astrapi69-mp3-tagger-ui.version>
 ```
         ...
     </properties>
@@ -105,11 +102,11 @@ Then you can add the dependency to your dependencies:
         <dependencies>
         ...
 ```xml
-            <!-- swing-app-ui-template DEPENDENCY -->
+            <!-- astrapi69-mp3-tagger-ui DEPENDENCY -->
             <dependency>
                 <groupId>io.github.astrapi69</groupId>
-                <artifactId>swing-app-ui-template</artifactId>
-                <version>${swing-app-ui-template.version}</version>
+                <artifactId>astrapi69-mp3-tagger-ui</artifactId>
+                <version>${astrapi69-mp3-tagger-ui.version}</version>
             </dependency>
 ```
         ...
@@ -122,7 +119,7 @@ Then you can add the dependency to your dependencies:
 
 ## 📸 Snapshots
 
-[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/io/github/astrapi69/swing-app-ui-template/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/io/github/astrapi69/swing-app-ui-template/)
+[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/io/github/astrapi69/astrapi69-mp3-tagger-ui/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/io/github/astrapi69/astrapi69-mp3-tagger-ui/)
 
 This section describes how to import snapshot versions into your project.
 Add the following code snippet to your gradle file in the repositories section:
@@ -206,7 +203,7 @@ or over the donation buttons at the top.
 
 ## Semantic Versioning
 
-The versions of swing-app-ui-template are maintained with the Semantic Versioning guidelines.
+The versions of astrapi69-mp3-tagger-ui are maintained with the Semantic Versioning guidelines.
 
 Release version numbers will be incremented in the following format:
 
@@ -220,18 +217,18 @@ You can donate or contribute solve issues or pull request. Every support are wel
 
 ## Want to Help and improve it? ###
 
-The source code for swing-app-ui-template are on GitHub. Please feel free to fork and send pull requests!
+The source code for astrapi69-mp3-tagger-ui are on GitHub. Please feel free to fork and send pull requests!
 
-Create your own fork of [astrapi69/swing-app-ui-template/fork](https://github.com/astrapi69/swing-app-ui-template/fork)
+Create your own fork of [astrapi69/astrapi69-mp3-tagger-ui/fork](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/fork)
 
-To share your changes, [submit a pull request](https://github.com/astrapi69/swing-app-ui-template/pull/new/develop).
+To share your changes, [submit a pull request](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/pull/new/develop).
 
 Don't forget to add new units tests on your changes.
 
 ## Contacting the Developers
 
-Do not hesitate to contact the swing-app-ui-template developers with your questions, concerns, comments, bug reports, or feature requests.
-- Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/swing-app-ui-template/issues).
+Do not hesitate to contact the astrapi69-mp3-tagger-ui developers with your questions, concerns, comments, bug reports, or feature requests.
+- Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/issues).
 
 ## Similar projects
 
