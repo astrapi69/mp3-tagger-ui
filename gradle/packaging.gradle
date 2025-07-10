@@ -1,0 +1,71 @@
+import java.text.SimpleDateFormat
+
+// Resolve properties during configuration
+def mainClassName = project.findProperty('mainClass') ?: 'io.github.astrapi69.swing.app.StartApplication'
+def createIzPackInstallerStringProperty = project.findProperty('createIzPackInstaller') ?: 'false'
+def createIzPackInstaller = createIzPackInstallerStringProperty.toBoolean()
+def releaseVersion = !version.endsWith("SNAPSHOT")
+def buildDirectory = layout.buildDirectory.get().asFile
+def buildJdk = "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
+def buildOs = "${System.properties['os.name']} ${System.properties['os.arch']} ${System.properties['os.version']}"
+
+jar {
+    manifest {
+        attributes(
+                "Name"                  : project.name,
+                "Manifest-Version"      : project.version,
+                "Main-Class"            : mainClassName,
+                "Implementation-Title"  : groupPackage + "." + rootProject.name,
+                "Implementation-Version": project.version,
+                "Implementation-Vendor" : projectLeaderName,
+                "Created-By"            : "Gradle " + gradle.gradleVersion,
+                "Built-By"              : projectLeaderName,
+                "Build-Timestamp"       : new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date()),
+                "Build-Jdk"             : buildJdk,
+                "Build-OS"              : buildOs
+        )
+    }
+}
+// Task to sign jar
+tasks.register("signJar", Jar) {
+    mustRunAfter(withAllDependendiesJar)
+    if (releaseVersion || createIzPackInstaller) {
+        def pkAlias = project.findProperty(keyAlias) ?: 'missing-alias'
+        def keystoreFileName = project.findProperty(storeFile) ?: 'missing-keystore.jks'
+        def storePassword = project.findProperty(storePassword) ?: 'missing-store-password'
+        def keyPassword = project.findProperty(keyPassword) ?: 'missing-key-password'
+        def keystoreType = project.findProperty(storeType) ?: 'JKS'
+        def libsFilePath = "$buildDirectory/libs"
+        def libFiles = files { file(libsFilePath).listFiles() }
+        def destDir = "$buildDirectory/signed"
+        def signedDir = new File(destDir)
+        signedDir.mkdirs()
+        libFiles.each {file ->
+            ant.signjar(
+                    jar: file,
+                    destDir: "$destDir",
+                    alias: "$pkAlias",
+                    storetype: "$keystoreType",
+                    keystore: "$keystoreFileName",
+                    storepass: "$storePassword",
+                    keypass: "$keyPassword",
+                    verbose: true,
+                    preservelastmodified: true
+            )
+        }
+    } else {
+        println('Created jar file is not signed.\n' +
+                'IzPackInstaller can not be created because it depends on signed jar.')
+    }
+}
+// Task to create jar with all dependencies
+tasks.register("withAllDependendiesJar", Jar) {
+    setDuplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    manifest.from jar.manifest
+    archiveClassifier.set("all")
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    exclude("META-INF/*.SF", "META-INF/*.DSA", "META-INF/*.RSA")
+    with jar
+}

@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        maven {
+            setUrl(projectRepositoriesMavenUrl)
+        }
+    }
+}
+
+plugins {
+    id 'idea'
+    id 'jacoco'
+    id 'java'
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    alias(libs.plugins.gradle.izpack.plugin)
+    alias(libs.plugins.gradle.versions.plugin)
+    alias(libs.plugins.grgit.gradle)
+    alias(libs.plugins.license.gradle.plugin)
+    alias(libs.plugins.lombok.plugin)
+    alias(libs.plugins.spotless.plugin.gradle)
+    alias(libs.plugins.version.catalog.update)
+}
+
+group = "$groupPackage" as Object
+version = "$projectVersion" as Object
+description = "$rootProject.name"
+
+// import gradle files
+apply from: "gradle/apply-gradle-files.gradle"
