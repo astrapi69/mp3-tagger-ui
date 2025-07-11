@@ -1,4 +1,3 @@
-
 [![Java CI with Gradle](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/astrapi69-mp3-tagger-ui/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/astrapi69-mp3-tagger-ui)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/astrapi69-mp3-tagger-ui.svg?style=flat)](https://github.com/astrapi69/astrapi69-mp3-tagger-ui/issues)
